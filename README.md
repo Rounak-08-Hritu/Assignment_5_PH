@@ -25,6 +25,7 @@ The spread operator ('...') is used to expand or copy elements of an array or pr
 Example:
 const numbers = [1, 2, 3];
 const newNumbers = [...numbers, 4, 5];
+
 Result:
 [1, 2, 3, 4, 5]
 Example with object:
@@ -45,7 +46,8 @@ Result:
 [2, 4, 6]
 
 filter():
-'filter()' creates a new array. It keeps only the items that match a condition
+'filter()' creates a new array. It keeps only the items that match a condition.
+
 Example:
 const nums = [1, 2, 3, 4];
 const even = nums.filter(num => num % 2 === 0);
