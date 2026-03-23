@@ -1,0 +1,52 @@
+.tab-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tab-btn:hover {
+  background: #e2e8f0;
+}
+
+.active-tab {
+  background: #0f172a;
+  color: white;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #cbd5e1;
+  border-bottom-color: #0f172a;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.issue-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-4px);
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
