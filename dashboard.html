@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Issues Tracker - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="assets/github-logo.png" alt="GitHub Logo" class="w-10 h-10 object-contain"/>
+        <h1 class="text-xl md:text-2xl font-bold text-slate-800">GitHub Issues Tracker</h1>
+      </div>
+
+      <div class="flex gap-2 w-full md:w-auto">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search issues..."
+          class="border border-slate-300 rounded-xl px-4 py-2 w-full md:w-80 outline-none focus:ring-2 focus:ring-slate-700"
+        />
+        <button
+          id="searchBtn"
+          class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-slate-800 transition"
+        >
+          Search
+        </button>
+        <button id="addIssueBtn" class="bg-green-500 text-white px-5 py-2 rounded-xl hover:bg-green-600 transition">Add New Issue</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Tabs -->
+    <section class="bg-white rounded-2xl shadow p-6">
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button class="tab-btn active-tab" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="open">Open</button>
+        <button class="tab-btn" data-tab="closed">Closed</button>
+      </div>
+
+      <!-- Summary -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span><img src="assets/Aperture.png" alt="">
+            </span>
+            <h2 class="text-lg font-bold text-slate-800">
+              <span id="issueCount">0</span> Issues Found
+            </h2>
+          </div>
+          <p class="text-slate-500 text-sm mt-1">Browse all issues and inspect details</p>
+        </div>
+
+        <div class="flex gap-3">
+          <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">
+            Open: <span id="openCount">0</span>
+          </span>
+          <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
+            Closed: <span id="closedCount">0</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Loader -->
+      <div id="loader" class="hidden flex justify-center py-10">
+        <div class="loader"></div>
+      </div>
+
+      <!-- Cards -->
+      <div id="issuesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="issueModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      <button id="closeModal" class="absolute top-4 right-4 text-2xl font-bold text-slate-500 hover:text-slate-700">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
