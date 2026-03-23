@@ -65,6 +65,7 @@ nums.forEach(num => console.log(num));
 4️⃣ What is an arrow function?
 
 An arrow function is a shorter and cleaner way to write a function in JavaScript. It uses the '=>' symbol.
+
 Example:
 const greet = (name) => {
   return `Hello, ${name}`;
@@ -73,6 +74,7 @@ const greet = (name) => {
 5️⃣ What are template literals?
 
 'Template literals' are a modern way to write strings in JavaScript using backticks ("''" ) instead of quotes. They make it easy to insert variables inside a string using `${}`.
+
 Example:
 const name = "Rounak";
 const message = `Hello, ${name}!`;
