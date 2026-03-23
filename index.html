@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Issues Tracker - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center px-4">
+
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+    <div class="text-center mb-8">
+      <img src="assets/github-logo.png" alt="GitHub Logo" class="w-16 h-16 mx-auto object-contain"/>
+      <h1 class="text-3xl font-bold mt-4 text-slate-800">GitHub Issues Tracker</h1>
+      <p class="text-slate-500 mt-2">Sign in to manage your issues</p>
+    </div>
+
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Username</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Enter username"
+          class="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-slate-700"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          class="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-slate-700"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-slate-800 transition"
+      >
+        Sign In
+      </button>
+    </form>
+
+    <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+      <p class="text-sm font-semibold text-slate-700">Demo Credentials</p>
+      <p class="text-sm text-slate-600 mt-1">Username: <span class="font-medium">admin</span></p>
+      <p class="text-sm text-slate-600">Password: <span class="font-medium">admin123</span></p>
+    </div>
+
+    <p id="loginError" class="text-red-500 text-sm mt-4 text-center hidden"></p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
